@@ -1,0 +1,18 @@
+# @package _global_
+
+# Postive Grid
+dset:
+  wav: /home/yuehpo/coding/PositiveGrid/demucs_data
+  samplerate: 44100
+  channels: 1
+  sources: ['clean']
+  use_musdb: False
+  segment: 10
+  normalize: true
+
+
+  
+
+epochs: 320
+batch_size: 4
+model: htdemucs

@@ -176,7 +176,7 @@ def get_solver(args, model_only=False):
         return Solver(None, model, optimizer, args)
 
     train_set, valid_set = get_datasets(args)
-
+    logger.info("Original train/valid set size: %d %d", len(train_set), len(valid_set))
     if args.augment.repitch.proba:
         vocals = []
         if 'vocals' in args.dset.sources:
@@ -221,6 +221,9 @@ def get_solver_from_sig(sig, model_only=False):
 
 @hydra_main(config_path="../conf", config_name="config", version_base="1.1")
 def main(args):
+    
+    print(args)
+    
     global __file__
     __file__ = hydra.utils.to_absolute_path(__file__)
     for attr in ["musdb", "wav", "metadata"]:
