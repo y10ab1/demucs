@@ -2,18 +2,17 @@
 
 # Postive Grid
 dset:
-  wav: /home/yuehpo/coding/PositiveGrid/demucs_data_clean_4s_new
+  wav: /home/yuehpo/coding/PositiveGrid/demucs_data
   samplerate: 44100
   channels: 1
   sources: ['clean', 'fx']
   use_musdb: False
-  # segment: 4
   normalize: true
 
 
   
 
 epochs: 320
-batch_size: 4
+batch_size: 8
 model: htdemucs
-weights: [1., 1.]  # weights over each source for the training/valid loss.
+weights: [1., 0.]  # weights over each source for the training/valid loss.
